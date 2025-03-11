@@ -9,12 +9,13 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 500,
-    height: 750,
+    width: 550,
+    height: 800,
     // width: 1920,
     // height: 1080,
     resizable: false,
     webPreferences: {
+      nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js'),
     },
   });
@@ -23,8 +24,18 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
+
+  // Disable DevTools
+  mainWindow.webContents.openDevTools = function () { };
+
+  // Hide menu bar
+
+  mainWindow.setMenuBarVisibility(false);
+  mainWindow.setAutoHideMenuBar(true);
+
 };
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -39,11 +50,13 @@ app.whenReady().then(() => {
       createWindow();
     }
   });
+
+
+  // Hide menu bar
+  setApplicationMenu(null);
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();

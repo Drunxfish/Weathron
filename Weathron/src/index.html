@@ -3,20 +3,22 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Hello World!</title>
+  <title>Weathron</title>
   <link rel="stylesheet" href="./index.css" />
+  <script src="./weather.js" defer></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     rel="stylesheet">
 </head>
 
 <body>
+  <div class="bg"></div>
   <div class="wContainer">
     <div class="search">
       <span class="material-symbols-rounded loc">
         location_on
       </span>
-      <input type="text" placeholder="Enter your city" id="search">
+      <input type="text" placeholder="Enter Your Location" id="search">
       <button class="initSearch">
         <span class="material-symbols-rounded">
           search
@@ -25,20 +27,22 @@
     </div>
     <div class="not-found">
       <img src="./../public/Images/404.png" alt="Not found">
-      <p>Oops! Could not find your city</p>
+      <p>Oops! We couldn't retrieve the weather information for the given location. Please enter a valid location.</p>
     </div>
     <div class="weather-display">
+      <h2 class="location-name"></h2>
+      <p class="region-name"></p>
       <img src="">
-      <p class="temperature">1</p>
-      <p class="description">1</p>
+      <p class="temperature"></p>
+      <p class="description"></p>
     </div>
     <div class="weather-details">
       <div class="humidity">
         <span class="material-symbols-rounded">
           water
         </span>
-        <i></i>
         <div class="text">
+          <i></i>
           <p>humidity</p>
         </div>
       </div>
@@ -46,8 +50,8 @@
         <span class="material-symbols-rounded">
           air
         </span>
-        <i></i>
         <div class="text">
+          <i></i>
           <p>Wind Speed</p>
         </div>
       </div>
