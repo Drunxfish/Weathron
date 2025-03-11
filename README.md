@@ -3,7 +3,7 @@
 Weathron is a simple weather desktop app built with Electron.js that allows users to search for any city, country, or region and get the current day's weather. It's a seamless combination of Electron.js and a weather app, providing a smooth and easy-to-use interface.
 
 ## 🌦️ Weathron Demo
-![Weathron Demo](Weathron\public\Images\preview-ezgif.com-speed.gif)
+![Weathron Demo](Weathron/public/Images/preview-ezgif.com-speed.gif)
 
 
 ## 🔹 Features
