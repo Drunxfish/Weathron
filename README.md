@@ -31,7 +31,7 @@ Feel free to use, modify, and distribute the app as long as proper attribution i
 ---
 
 ## Installation  
-### (don't forget to replace placeholder with your own API KEY)
+#### (don't forget to replace placeholder with your own API KEY)
 
 1. Install **[Node.js](https://nodejs.org/)**.  
 2. Clone the repo:  
