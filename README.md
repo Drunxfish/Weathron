@@ -23,12 +23,6 @@ Weathron is a simple weather desktop app built with Electron.js that allows user
 Weathron is open-source and licensed under the **MIT License**.  
 Feel free to use, modify, and distribute the app as long as proper attribution is provided.
 
----
-
-🚀 **Stay ahead of the weather with Weathron!   ** 🌇
-
-
----
 
 ## Installation  
 #### (don't forget to replace placeholder with your own API KEY)
@@ -45,4 +39,10 @@ Feel free to use, modify, and distribute the app as long as proper attribution i
 
 3. Open the app:
    Navigate to the WeathronApp/Weathron-win32-x64/ folder, and double-click Weathron.exe to open the program.
+
+---
+
+🚀 **Stay ahead of the weather with Weathron!   ** 🌇
+
+---
 
