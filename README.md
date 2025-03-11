@@ -24,7 +24,7 @@ Weathron is open-source and licensed under the **MIT License**.
 Feel free to use, modify, and distribute the app as long as proper attribution is provided.
 
 
-## Installation  
+## 🛠️ Installation  
 #### (don't forget to replace placeholder with your own API KEY)
 
 1. Install **[Node.js](https://nodejs.org/)**.  
