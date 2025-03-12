@@ -34,10 +34,9 @@ Feel free to use, modify, and distribute the app as long as proper attribution i
    git clone https://github.com/Drunxfish/weathron.git && cd weathron
    npm install
    npm start
-   electron-packager . Weathron --platform=win32 --arch=x64 --out=WeathronApp --overwrite
    ```
 
-3. Open the app:
+4. Open the app:
    Navigate to the WeathronApp/Weathron-win32-x64/ folder, and double-click Weathron.exe to open the program.
 
 ---
