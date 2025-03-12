@@ -33,16 +33,21 @@ Feel free to use, modify, and distribute the app as long as proper attribution i
    ```sh
    git clone https://github.com/Drunxfish/weathron.git && cd weathron
    npm install
+   npm run
+   ```
+   (build optional)
+   
+   ```
    npm install electron-packager -g
-   npx electron-packager . Weathron --platform=win32 --arch=x64 --out=WeathronApp --overwrite
+   npm run dist
    ```
    
-4. Open the app:
-   Navigate to the WeathronApp/Weathron-win32-x64/ folder, and double-click Weathron.exe to open the program.
+4. Open the app (if you choose to build*)
+   Navigate to the Weathron\Weathron\dist\win-unpacked folder, and double-click Weathron.exe to open the program.
 
 ---
 
-🚀 **Stay ahead of the weather with Weathron!   ** 🌇
+🚀 ** Stay ahead of the weather with Weathron! ** 🌇
 
 ---
 
