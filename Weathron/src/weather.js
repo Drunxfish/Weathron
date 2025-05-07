@@ -1,24 +1,24 @@
 // Display/Containers
-const container = document.querySelector('.wContainer');
-const searchBtn = document.querySelector('.initSearch');
-const weatherDisplay = document.querySelector('.weather-display');
-const weatherDetails = document.querySelector('.weather-details');
-const notFound = document.querySelector('.not-found');
+const container = qs('.wContainer');
+const searchBtn = qs('.initSearch');
+const weatherDisplay = qs('.weather-display');
+const weatherDetails = qs('.weather-details');
+const notFound = qs('.not-found');
 
 // Elements
-const weatherImg = document.querySelector('.weather-display img');
-const temperature = document.querySelector('.weather-display .temperature')
-const tempDescription = document.querySelector('.weather-display .description');
-const humidity = document.querySelector('.weather-details .humidity i');
-const wind = document.querySelector('.weather-details .wind i')
-const locName = document.querySelector('.location-name');
-const regName = document.querySelector('.region-name');
+const weatherImg = qs('.weather-display img');
+const temperature = qs('.weather-display .temperature')
+const tempDescription = qs('.weather-display .description');
+const humidity = qs('.weather-details .humidity i');
+const wind = qs('.weather-details .wind i')
+const locName = qs('.location-name');
+const regName = qs('.region-name');
 
 
 // Asynchronous function to handle API request/display
 async function fetchWeather() {
-    const APIKey = '##############################'; // Get your own API key <3 :P
-    const city = document.querySelector('#search').value;
+    const APIKey = '###############################'; // Get your own API key
+    const city = qs('#search').value;
 
     // Stops execution
     if (city === '') return;
@@ -26,11 +26,6 @@ async function fetchWeather() {
     try {
         // Request (well aware that this isn't the greatest way to pass APIKEY D:)
         const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}`);
-
-        // Display full container 
-        container.style.borderRadius = '0';
-        container.style.backdropFilter = 'blur(3px)';
-        container.style.height = '760px';
 
         // Throw error
         if (!response.ok) { throw new Error(); }
@@ -58,18 +53,25 @@ async function fetchWeather() {
 
 
         // Display properties
-        weatherDisplay.style.display = '';
-        weatherDetails.style.display = '';
-        weatherDisplay.classList.add('fade-in')
-        weatherDetails.classList.add('fade-in')
+        [weatherDisplay, weatherDetails].forEach(el => {
+            el.style.display = '';
+            el.classList.add('fade-in');
+        });
 
-    // Display error contents
+        // Display error contents
     } catch (error) {
         weatherDisplay.style.display = 'none';
         weatherDetails.style.display = 'none';
         notFound.style.display = 'block';
         notFound.classList.add('fade-in');
         notFound.classList.remove('fade-out')
+    } finally {
+        // Display full container 
+        Object.assign(container.style, {
+            borderRadius: '0',
+            backdropFilter: 'blur(3px)',
+            height: '760px'
+        });
     }
 }
 
@@ -81,8 +83,10 @@ searchBtn.addEventListener('click', fetchWeather);
 
 
 
-
-
+// Return element by query selector
+function qs(qry) {
+    return document.querySelector(qry);
+}
 
 
 // Returns image directory in cases as...
